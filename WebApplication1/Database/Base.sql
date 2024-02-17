@@ -16,3 +16,59 @@
 --             students(id),
 --             course_id serial REFERENCES
 --             course(id));
+
+
+
+--INSERT INTO Course (name, duration, student_amount, teacher_id) VALUES
+--    ('Mathematics 101', '3 months', '25', 1),
+--    ('English Literature', '4 months', '30', 2),
+--    ('History of Art', '2 months', '20', 3),
+--    ('Computer Science Basics', '3.5 months', '25', 4),
+--    ('Physics Fundamentals', '3 months', '22', 5),
+--    ('Chemistry Basics', '3 months', '20', 6),
+--    ('Music Theory', '2.5 months', '18', 7),
+--    ('Physical Education', '2 months', '15', 8),
+--    ('Introduction to Psychology', '4 months', '30', 9),
+--    ('Political Science', '3.5 months', '25', 10),
+--    ('Creative Writing', '3 months', '20', 1),
+--    ('Economics Principles', '4 months', '28', 2),
+--    ('Geography Essentials', '2.5 months', '18', 3),
+--    ('Environmental Science', '3 months', '22', 4),
+--    ('Foreign Language - French', '3 months', '20', 5),
+--    ('Business Management', '3 months', '20', 6),
+--    ('Sociology Fundamentals', '2 months', '15', 7),
+--    ('Health Education', '3.5 months', '25', 8),
+--    ('Engineering Basics', '3 months', '22', 9),
+--    ('Artificial Intelligence', '4 months', '28', 10);
+--INSERT INTO teacher (full_name, salary, phone, age) VALUES
+--    ('Alice Johnson', 55000.00, '123-456-7890', 35),
+--    ('Bob Smith', 60000.00, '456-789-0123', 40),
+--    ('Charlie Brown', 62000.00, '789-012-3456', 38),
+--    ('Diana Martinez', 58000.00, '987-654-3210', 42),
+--    ('Edward Davis', 57000.00, '321-654-0987', 37),
+--    ('Fiona Wilson', 59000.00, '654-321-9870', 39),
+--    ('George Anderson', 63000.00, '012-345-6789', 36),
+--    ('Hannah Taylor', 64000.00, '876-543-2109', 41),
+--    ('Ian Thomas', 61000.00, '543-210-9876', 43),
+--    ('Julia Jackson', 60000.00, '210-987-6543', 39);
+--INSERT INTO students (full_name, phone, student_group) VALUES
+--    ('John Doe', '123-456-7890', 'Group A'),
+--    ('Jane Smith', '456-789-0123', 'Group B'),
+--    ('Michael Johnson', '789-012-3456', 'Group A'),
+--    ('Emily Davis', '987-654-3210', 'Group C'),
+--    ('Christopher Brown', '321-654-0987', 'Group B'),
+--    ('Jessica Wilson', '654-321-9870', 'Group A'),
+--    ('David Martinez', '012-345-6789', 'Group C'),
+--    ('Jennifer Anderson', '876-543-2109', 'Group B'),
+--    ('James Taylor', '543-210-9876', 'Group A'),
+--    ('Sarah Thomas', '210-987-6543', 'Group C'),
+--    ('Matthew Jackson', '678-901-2345', 'Group B'),
+--    ('Amanda White', '901-234-5678', 'Group A'),
+--    ('Daniel Lee', '345-678-9012', 'Group C'),
+--    ('Ashley Harris', '567-890-1234', 'Group B'),
+--    ('Ryan Martin', '890-123-4567', 'Group A'),
+--    ('Taylor Thompson', '432-109-8765', 'Group C'),
+--    ('Kevin Garcia', '678-123-4567', 'Group B'),
+--    ('Lauren Rodriguez', '123-456-7890', 'Group A'),
+--    ('Brandon Nguyen', '987-654-3210', 'Group C'),
+--    ('Stephanie King', '345-678-9012', 'Group B');
