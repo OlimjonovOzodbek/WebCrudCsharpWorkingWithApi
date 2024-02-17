@@ -1,15 +1,16 @@
 ﻿using WebApplication1.Models;
 using WebApplication1.ModelsTDO;
 using WebApplication1.MyServices.IServices;
+using WebApplication1.Repositories;
 
 namespace WebApplication1.MyServices.Services
 {
     public class CourseService : ICourseService
     {
         private readonly ICourseService _cS;
-        public CourseService(ICourseService cs)
+        public CourseService(ICourseRepository cs)
         {
-            _cS = cs;
+            _cS = (ICourseService?)cs;
         }
         public string Create(Cource_TDO course)
         {

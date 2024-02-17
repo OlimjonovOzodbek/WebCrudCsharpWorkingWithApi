@@ -1,15 +1,16 @@
 ﻿using WebApplication1.Models;
 using WebApplication1.ModelsTDO;
 using WebApplication1.MyServices.IServices;
+using WebApplication1.Repositories;
 
 namespace WebApplication1.MyServices.Services
 {
     public class TeacherService : ITeacherService
     {
         public ITeacherService _ts;
-        public TeacherService(ITeacherService ts)
+        public TeacherService(ITeacherRepository ts)
         {
-            _ts = ts;
+            _ts = (ITeacherService?)ts;
         }
         public string Create(Teacher_TDO teacher)
         {
