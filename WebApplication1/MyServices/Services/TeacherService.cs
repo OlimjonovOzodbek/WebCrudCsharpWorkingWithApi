@@ -7,10 +7,10 @@ namespace WebApplication1.MyServices.Services
 {
     public class TeacherService : ITeacherService
     {
-        public ITeacherService _ts;
+        public ITeacherRepository _ts;
         public TeacherService(ITeacherRepository ts)
         {
-            _ts = (ITeacherService?)ts;
+            _ts = ts;
         }
         public string Create(Teacher_TDO teacher)
         {

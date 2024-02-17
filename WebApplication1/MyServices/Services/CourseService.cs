@@ -7,10 +7,10 @@ namespace WebApplication1.MyServices.Services
 {
     public class CourseService : ICourseService
     {
-        private readonly ICourseService _cS;
+        private readonly ICourseRepository _cS;
         public CourseService(ICourseRepository cs)
         {
-            _cS = (ICourseService?)cs;
+            _cS = cs;
         }
         public string Create(Cource_TDO course)
         {

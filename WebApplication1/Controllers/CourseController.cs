@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Npgsql;
 using WebApplication1.Models;
 using WebApplication1.ModelsTDO;
+using WebApplication1.MyServices.IServices;
 using WebApplication1.Repositories;
 
 namespace WebApplication1.Controllers
@@ -11,8 +12,8 @@ namespace WebApplication1.Controllers
     [ApiController]
     public class CourseController : Controller
     {
-        ICourseRepository _cr;
-        public CourseController(ICourseRepository cr)
+        private readonly ICourseService _cr;
+        public CourseController(ICourseService cr)
         {
             _cr = cr;
         }
