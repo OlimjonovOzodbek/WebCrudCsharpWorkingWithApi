@@ -21,27 +21,78 @@ namespace WebApplication1.Controllers
         [HttpGet]
         public List<Teacher> Get()
         {
-            return _tr.Get();
+            try
+            {
+                return _tr.Get();
+            }
+            catch (Exception ex)
+            {
+                return new List<Teacher>();
+            }
         }
         [HttpPost]
         public string Create(Teacher_TDO teacher)
         {
-            return _tr.Create(teacher);
+            if (teacher == null || teacher.full_name == "")
+            {
+                return "Name is null";
+            }
+            try
+            {
+                return _tr.Create(teacher);
+            }
+            catch (Exception ex)
+            {
+                return "Service ERROR";
+            }
         }
         [HttpDelete]
         public string Delete(int id)
         {
-            return _tr.Delete(id);
+            if (id < 0)
+            {
+                return "Id can not be less then 1";
+            }
+            try
+            {
+                return _tr.Delete(id);
+            }
+            catch (Exception ex)
+            {
+                return "Service ERROR";
+            }
         }
         [HttpPatch]
         public string Patch(int id, string Name)
         {
-            return _tr.Patch(id, Name);
+            if (id < 0 || Name == "")
+            {
+                return "ID or Name is empty or id is less than 1";
+            }
+            try
+            {
+                return _tr.Patch(id, Name);
+            }
+            catch (Exception ex)
+            {
+                return "Service ERROR";
+            }
         }
         [HttpPut]
         public string Put(int id, string Name, int age, string salary, string phone)
         {
-            return _tr.Put(id, Name,age,salary,phone);
+            if (id < 0 || Name == "")
+            {
+                return "ID or Name is empty or id is less than 1";
+            }
+            try
+            {
+                return _tr.Put(id, Name, age, salary, phone);
+            }
+            catch (Exception ex)
+            {
+                return "Service ERROR";
+            }
         }
 
     }

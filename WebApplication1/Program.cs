@@ -20,6 +20,7 @@ namespace WebApplication1
             builder.Services.AddScoped<IStudentRepository, StudentRepository>();
             builder.Services.AddScoped<ITeacherRepository, TeacherRepository>();
             builder.Services.AddScoped<ICourseRepository, CourseRepository>();
+            
             builder.Services.AddScoped<ITeacherService, TeacherService>();
             builder.Services.AddScoped<IStudentService, StudentService>();
             builder.Services.AddScoped<ICourseService, CourseService>();

@@ -19,28 +19,79 @@ namespace WebApplication1.Controllers
         [HttpGet]
         public List<Student> Get()
         {
-            return _st.Get();
+            try
+            {
+                return _st.Get();
+            }
+            catch (Exception ex)
+            {
+                return new List<Student>();
+            }
         }
 
         [HttpPost]
         public string Post(Student_TDO student)
         {
-            return _st.Create(student);
+            if (student == null || student.full_name == "")
+            {
+                return "Name is null";
+            }
+            try
+            {
+                return _st.Create(student);
+            }
+            catch (Exception ex)
+            {
+                return "Service ERROR";
+            }
         }
         [HttpDelete]
         public string Delete(int id)
         {
-            return _st.Delete(id);
+            if (id < 0)
+            {
+                return "Id can not be less then 1";
+            }
+            try
+            {
+                return _st.Delete(id);
+            }
+            catch (Exception ex)
+            {
+                return "Service ERROR";
+            }
         }
         [HttpPatch]
         public string Patch(int id, string Name)
         {
-            return _st.Patch(id, Name);
+            if (id < 0 || Name == "")
+            {
+                return "ID or Name is empty or id is less than 1";
+            }
+            try
+            {
+                return _st.Patch(id, Name);
+            }
+            catch (Exception ex)
+            {
+                return "Service ERROR";
+            }
         }
         [HttpPut]
         public string Put(int id, string Name, int age, int group, string phone)
         {
-            return _st.Put(id, Name,age,group,phone);
+            if (id < 0 || Name == "")
+            {
+                return "ID or Name is empty or id is less than 1";
+            }
+            try
+            {
+                return _st.Put(id, Name, age, group, phone);
+            }
+            catch (Exception ex)
+            {
+                return "Service ERROR";
+            }
         }
     }
 }
