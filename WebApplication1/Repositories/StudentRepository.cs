@@ -8,7 +8,7 @@ namespace WebApplication1.Repositories
     public class StudentRepository : IStudentRepository
     {
         public IConfiguration _config;
-        public StudentRepository (IConfiguration conf)
+        public StudentRepository(IConfiguration conf)
         {
             _config = conf;
         }

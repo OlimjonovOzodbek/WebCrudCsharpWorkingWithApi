@@ -1,10 +1,7 @@
-﻿using Dapper;
-using Microsoft.AspNetCore.Mvc;
-using Npgsql;
+﻿using Microsoft.AspNetCore.Mvc;
 using WebApplication1.Models;
 using WebApplication1.ModelsTDO;
 using WebApplication1.MyServices.IServices;
-using WebApplication1.Repositories;
 
 namespace WebApplication1.Controllers
 {

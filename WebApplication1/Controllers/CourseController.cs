@@ -1,10 +1,7 @@
-﻿using Dapper;
-using Microsoft.AspNetCore.Mvc;
-using Npgsql;
+﻿using Microsoft.AspNetCore.Mvc;
 using WebApplication1.Models;
 using WebApplication1.ModelsTDO;
 using WebApplication1.MyServices.IServices;
-using WebApplication1.Repositories;
 
 namespace WebApplication1.Controllers
 {
@@ -24,8 +21,8 @@ namespace WebApplication1.Controllers
             {
                 return _cr.Get();
             }
-            catch (Exception ex) 
-            { 
+            catch (Exception ex)
+            {
                 return new List<Course>();
             }
         }
@@ -33,15 +30,15 @@ namespace WebApplication1.Controllers
         [HttpPost]
         public string Create(Cource_TDO course)
         {
-            if (course == null || course.name == "") 
+            if (course == null || course.name == "")
             {
                 return "Name is null";
             }
             try
             {
-            return _cr.Create(course);
+                return _cr.Create(course);
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
                 return "Service ERROR";
             }
@@ -55,7 +52,7 @@ namespace WebApplication1.Controllers
             }
             try
             {
-            return _cr.Delete(id);
+                return _cr.Delete(id);
             }
             catch (Exception ex)
             {
@@ -65,15 +62,15 @@ namespace WebApplication1.Controllers
         [HttpPatch]
         public string Patch(int id, string Name)
         {
-            if(id < 0 || Name == "")
+            if (id < 0 || Name == "")
             {
                 return "ID or Name is empty or id is less than 1";
             }
             try
             {
-            return _cr.Patch(id, Name);
+                return _cr.Patch(id, Name);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return "Service ERROR";
             }
@@ -87,9 +84,9 @@ namespace WebApplication1.Controllers
             }
             try
             {
-            return _cr.Put(id, Name, duration, student_amount, teacher_id);
+                return _cr.Put(id, Name, duration, student_amount, teacher_id);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return "Service ERROR";
             }

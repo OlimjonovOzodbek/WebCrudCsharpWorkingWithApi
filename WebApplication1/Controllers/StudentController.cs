@@ -1,7 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using WebApplication1.Models;
-using Npgsql;
-using Dapper;
 using WebApplication1.ModelsTDO;
 using WebApplication1.Repositories;
 

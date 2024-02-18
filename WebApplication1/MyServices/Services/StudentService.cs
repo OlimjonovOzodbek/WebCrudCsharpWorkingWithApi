@@ -29,12 +29,12 @@ namespace WebApplication1.MyServices.Services
 
         public string Patch(int id, string Name)
         {
-            return Patch(id,Name);
+            return Patch(id, Name);
         }
 
         public string Put(int id, string Name, int age, int group, string phone)
         {
-            return Put(id,Name,age,group,phone);
+            return Put(id, Name, age, group, phone);
         }
     }
 }
