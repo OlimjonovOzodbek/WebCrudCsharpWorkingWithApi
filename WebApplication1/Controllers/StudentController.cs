@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using WebApplication1.Models;
 using WebApplication1.ModelsTDO;
+using WebApplication1.MyServices.IServices;
 using WebApplication1.Repositories;
 
 namespace WebApplication1.Controllers
@@ -9,8 +10,8 @@ namespace WebApplication1.Controllers
     [ApiController]
     public class StudentController : Controller
     {
-        public IStudentRepository _st;
-        public StudentController(IStudentRepository st)
+        public IStudentService _st;
+        public StudentController(IStudentService st)
         {
             _st = st;
         }
@@ -30,10 +31,7 @@ namespace WebApplication1.Controllers
         [HttpPost]
         public string Post(Student_TDO student)
         {
-            if (student == null || student.full_name == "")
-            {
-                return "Name is null";
-            }
+            
             try
             {
                 return _st.Create(student);
@@ -46,10 +44,7 @@ namespace WebApplication1.Controllers
         [HttpDelete]
         public string Delete(int id)
         {
-            if (id < 0)
-            {
-                return "Id can not be less then 1";
-            }
+            
             try
             {
                 return _st.Delete(id);
@@ -62,10 +57,7 @@ namespace WebApplication1.Controllers
         [HttpPatch]
         public string Patch(int id, string Name)
         {
-            if (id < 0 || Name == "")
-            {
-                return "ID or Name is empty or id is less than 1";
-            }
+            
             try
             {
                 return _st.Patch(id, Name);
@@ -78,10 +70,7 @@ namespace WebApplication1.Controllers
         [HttpPut]
         public string Put(int id, string Name, int age, int group, string phone)
         {
-            if (id < 0 || Name == "")
-            {
-                return "ID or Name is empty or id is less than 1";
-            }
+            
             try
             {
                 return _st.Put(id, Name, age, group, phone);

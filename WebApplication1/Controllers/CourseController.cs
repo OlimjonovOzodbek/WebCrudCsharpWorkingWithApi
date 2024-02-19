@@ -30,10 +30,6 @@ namespace WebApplication1.Controllers
         [HttpPost]
         public string Create(Cource_TDO course)
         {
-            if (course == null || course.name == "")
-            {
-                return "Name is null";
-            }
             try
             {
                 return _cr.Create(course);
@@ -46,10 +42,6 @@ namespace WebApplication1.Controllers
         [HttpDelete]
         public string Delete(int id)
         {
-            if (id < 0)
-            {
-                return "Id can not be less then 1";
-            }
             try
             {
                 return _cr.Delete(id);
@@ -62,10 +54,7 @@ namespace WebApplication1.Controllers
         [HttpPatch]
         public string Patch(int id, string Name)
         {
-            if (id < 0 || Name == "")
-            {
-                return "ID or Name is empty or id is less than 1";
-            }
+
             try
             {
                 return _cr.Patch(id, Name);
@@ -78,10 +67,7 @@ namespace WebApplication1.Controllers
         [HttpPut]
         public string Put(int id, string Name, string duration, string student_amount, int teacher_id)
         {
-            if (id < 0 || Name == "")
-            {
-                return "ID or Name is empty or id is less than 1";
-            }
+
             try
             {
                 return _cr.Put(id, Name, duration, student_amount, teacher_id);
